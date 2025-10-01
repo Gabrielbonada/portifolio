@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gabriel Bonada — Portfólio</title>
+    <meta name="description" content="Portfólio de Gabriel — desenvolvedor front-end, sites modernos e responsivos." />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0b10;
+            --card: #0f1116;
+            --muted: #9aa0a6;
+            --accent: #7c5cff;
+            /* roxo */
+            --accent-2: #00e6d1;
+            /* aqua */
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-2: rgba(255, 255, 255, 0.02);
+            --radius: 16px;
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 92, 255, 0.08), transparent),
+                radial-gradient(900px 500px at 90% 90%, rgba(0, 230, 209, 0.04), transparent),
+                var(--bg);
+            color: #e6eef8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.4;
+            padding-bottom: 80px;
+        }
+
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 0
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #071018
+        }
+
+        .nav {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .nav a {
+            color: var(--muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            transition: all .25s
+        }
+
+        .nav a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateY(-2px)
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 28px;
+            align-items: center;
+            padding: 36px 0
+        }
+
+        .hero .eyebrow {
+            color: var(--accent-2);
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        h1 {
+            font-family: Poppins, Inter;
+            font-size: 40px;
+            margin: 8px 0;
+            letter-spacing: -0.02em
+        }
+
+        p.lead {
+            color: var(--muted);
+            max-width: 60%
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px
+        }
+
+        .btn {
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 700
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.12);
+            color: #031216
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--muted)
+        }
+
+        /* Card preview */
+        .preview-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            border-radius: 16px;
+            padding: 18px;
+            height: 320px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .preview-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            filter: contrast(.95) saturate(.95)
+        }
+
+        .preview-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(120deg, rgba(124, 92, 255, 0.06), transparent 30%);
+        }
+
+        /* Sections */
+        section {
+            padding: 32px 0
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 20px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* About */
+        .about {
+            display: flex;
+            gap: 24px;
+            align-items: center
+        }
+
+        .avatar {
+            width: auto;
+            height: auto;
+            border-radius: 99px;
+            background: linear-gradient(180deg, var(--glass), transparent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 30px
+        }
+        .avatar img{
+            border-radius: 99px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        .chip {
+            padding: 8px 10px;
+            border-radius: 999px;
+            background: var(--glass-2);
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        /* Projects grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        .project {
+            background: var(--card);
+            padding: 12px;
+            border-radius: 12px;
+            transition: transform .28s, box-shadow .28s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6)
+        }
+
+        .project img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px
+        }
+
+        .project h3 {
+            margin: 10px 0 6px
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 0
+        }
+
+        .project .tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+
+        .service {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent);
+            padding: 18px;
+            border-radius: 14px
+        }
+
+        /* Contact */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 18px
+        }
+
+        form {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 12px
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: transparent;
+            color: inherit;
+            font-size: 14px;
+            margin-bottom: 10px
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: var(--glass);
+            text-decoration: none;
+            color: inherit
+        }
+
+        footer {
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.02)
+        }
+
+        /* Responsive */
+        @media (max-width:1000px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .contact {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media (max-width:640px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            h1 {
+                font-size: 28px
+            }
+
+            .hero p.lead {
+                max-width: 100%
+            }
+        }
+
+        /* Subtle animations */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity .6s cubic-bezier(.2, .9, .2, 1), transform .6s cubic-bezier(.2, .9, .2, 1)
+        }
+
+        [data-reveal].is-visible {
+            opacity: 1;
+            transform: none
+        }
+
+        /* micro-interactions */
+        .glow-on-hover {
+            transition: box-shadow .25s ease;
+        }
+
+        .glow-on-hover:hover {
+            box-shadow: 0 8px 30px rgba(124, 92, 255, 0.14)
+        }
+        /* ========================== */
+/* RESPONSIVIDADE AVANÇADA   */
+/* ========================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p.lead {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-cta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* MOBILE FIRST – ajustes extras para 480px e abaixo */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+    section{
+        padding: 0px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        display: none; /* Esconde menu desktop */
+    }
+
+    /* Botão hambúrguer simples */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--muted);
+        margin-left: auto;
+    }
+    .section-title{
+        display: none;
+    }
+    .preview-card {
+        display: none;
+    }
+
+    h1 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    p.lead {
+        max-width: 100%;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+        padding: 50px 0px;
+    }
+
+    .preview-card {
+        height: auto;
+        margin-top: 18px;
+    }
+
+    /* Sobre */
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .avatar {
+        margin-bottom: 12px;
+    }
+
+    /* Projetos e serviços como coluna única */
+    .grid,
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .project,
+    .service {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* Contato */
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    .socials {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .socials a {
+        justify-content: center;
+    }
+
+    footer {
+        text-align: center;
+        flex-direction: column;
+    }
+}@media (max-width: 480px) {
+    .recent-projects {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .recent-projects span {
+        display: inline-block;
+        background: var(--glass);
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">GB</div>
+                <div>
+                    <div style="font-weight:800">Gabriel Bonada</div>
+                    <div style="font-size:12px;color:var(--muted)">Criador de sites • Front-end</div>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="#projetos">Projetos</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+                <a class="btn btn-ghost" href="#contato">Contratar</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <main class="hero">
+            <div>
+                <div class="eyebrow" data-reveal>Olá — Eu sou o Gabriel</div>
+                <h1 data-reveal>Eu crio sites modernos, rápidos e que convertem.</h1>
+                <p class="lead muted" data-reveal>Desenvolvo projetos em HTML/CSS/JS, React e soluções responsivas para
+                    pequenas empresas e freelancers que precisam de presença online profissional.</p>
+
+                <div class="hero-cta" data-reveal>
+                    <button class="btn btn-primary"
+                        onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir
+                        orçamento</button>
+                    <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+                </div>
+
+               <div style="margin-top:22px" data-reveal>
+    <div style="font-size:13px;color:var(--muted)">Projetos recentes</div>
+    <div class="recent-projects">
+        <span><a href="https://jade-queijadas-9bdaf0.netlify.app/">Meu Lanche Senai</a> </span>
+        <span> <a href="">AutoMax</a> </span>
+        <span> <a href="https://silksongwiki.netlify.app/">Wiki Silksong</a> </span>
+        <span> <a href="https://tucanstore.netlify.app/">Tucan Store</a> </span>
+        <span> <a href="">Hollow Cards</a> </span>
+    </div>
+</div>
+
+            </div>
+
+            <aside>
+                <div class="preview-card glow-on-hover" data-reveal>
+                    <!-- Placeholder preview. Substitua a src por um screenshot do seu projeto -->
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
+                        alt="preview">
+                    <div class="preview-glow"></div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- ABOUT -->
+        <section id="sobre" data-reveal>
+            <div class="section-title">
+                <h2>Sobre Mim</h2>
+                <div class="muted">— quem sou e o que faço</div>
+            </div>
+            <div class="about">
+                <div class="avatar"><img src="/111461256.png" alt=""></div>
+                <div>
+                    <p class="muted" style="text-align: justify;">Sou Gabriel, desenvolvedor front-end com experiência em criar interfaces limpas,
+                        responsivas e com foco em usabilidade. Gosto de juntar design e performance para criar páginas
+                        que convertem visitantes em clientes.</p>
+                    <div class="skills">
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">React</span>
+                        <span class="chip">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projetos" data-reveal>
+            <div class="section-title">
+                <h2>Projetos</h2>
+                <div class="muted">— trabalhos selecionados</div>
+            </div>
+            <div class="grid">
+
+                <article class="project" data-project-id="meu-lanche">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop&s=placeholder"
+                        alt="Meu Lanche Senai">
+                    <h3>Meu Lanche Senai</h3>
+                    <p class="muted">Site para lancheria com cardápio online, pedido via QR Code e design responsivo.
+                    </p>
+                    <div class="tags">
+                        <small class="chip">HTML</small>
+                        <small class="chip">Bootstrap</small>
+                    </div>
+                </article>
+
+                <article class="project" data-project-id="automax">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop&s=placeholder"
+                        alt="AutoMax">
+                    <h3>AutoMax</h3>
+                    <p class="muted">Plataforma de revenda de veículos com filtros e galeria de anúncios.</p>
+                    <div class="tags">
+                        <small class="chip">JS</small>
+                        <small class="chip">APIs</small>
+                    </div>
+                </article>
+
+                <article class="project" data-project-id="hollow-cards">
+                    <img src="https://images.unsplash.com/photo-1526378722684-9f9d1b4d3a4e?q=80&w=800&auto=format&fit=crop&s=placeholder"
+                        alt="Hollow Cards">
+                    <h3>Hollow Cards</h3>
+                    <p class="muted">Jogo de cartas em HTML/CSS/JS com drag & drop e animações.</p>
+                    <div class="tags">
+                        <small class="chip">Canvas</small>
+                        <small class="chip">Animations</small>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="servicos" data-reveal>
+            <div class="section-title">
+                <h2>Serviços</h2>
+                <div class="muted">— como eu posso ajudar</div>
+            </div>
+            <div class="services">
+                <div class="service">
+                    <h3>Sites institucionais</h3>
+                    <p class="muted">Landing pages e sites para apresentar sua empresa com design profissional.</p>
+                </div>
+                <div class="service">
+                    <h3>Landing pages</h3>
+                    <p class="muted">Páginas focadas em conversão para campanhas e captação de leads.</p>
+                </div>
+                <div class="service">
+                    <h3>Manutenção</h3>
+                    <p class="muted">Correções, otimização e atualizações para sites já existentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contato" data-reveal>
+            <div class="section-title">
+                <h2>Contato</h2>
+                <div class="muted">— vamos conversar</div>
+            </div>
+            <div class="contact">
+                <form onsubmit="handleForm(event)">
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required />
+                    <input type="email" name="email" id="email" placeholder="Seu email" required />
+                    <textarea name="mensagem" id="mensagem" rows="5" placeholder="Descreva seu projeto..."
+                        required></textarea>
+                    <div style="display:flex;gap:8px">
+                        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                        <button type="button" class="btn btn-ghost" onclick="openWhats()">WhatsApp</button>
+                    </div>
+                </form>
+
+                <aside>
+                    <div class="card" style="background:var(--card);padding:12px;border-radius:12px">
+                        <h4>Contatos rápidos</h4>
+                        <div class="socials" style="margin-top:12px">
+                            <a href="#" onclick="openLink('https:wa.me551991648456')">WhatsApp</a>
+                            <a href="#" onclick="openLink('https://www.linkedin.com/in/YOURPROFILE')">LinkedIn</a>
+                            <a href="#" onclick="openLink('https://github.com/Gabrielbonada')">GitHub</a>
+                        </div>
+                        <div style="margin-top:12px;color:var(--muted)">Ou envie um email diretamente: <br><a
+                                href="mailto:Biel.vaztrindade@email.com">Biel.vaztrindade@email.com</a></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <footer>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+                <div>© Gabriel Bonada • Desenvolvedor de Sites</div>
+                <div class="muted">Feito com cuidado — Quer que eu personalize esse template pra você?</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Simple reveal on scroll (IntersectionObserver)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+        // Project click -> open modal sample (basic)
+        document.querySelectorAll('.project').forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.projectId;
+                alert('Abrir modal do projeto: ' + id + ' (substitua por modal real)');
+            });
+        });
+
+        function handleForm(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const subject = encodeURIComponent('Orçamento - ' + nome);
+            const body = encodeURIComponent(mensagem + '\n\nContato: ' + nome + ' <' + email + '>');
+            // fallback: abrir mailto
+            window.location.href = `mailto:seu@email.com?subject=${subject}&body=${body}`;
+        }
+
+        function openWhats() {
+            window.open('https://wa.me/YOURNUMBER', '_blank');
+        }
+        function openLink(url) { window.open(url, '_blank'); }
+
+        // small accessibility helper: focus outlines for keyboard users
+        function handleFirstTab(e) {
+            if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
+        }
+        window.addEventListener('keydown', handleFirstTab);
+    </script>
+</body>
+
+</html>
