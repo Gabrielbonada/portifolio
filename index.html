@@ -220,7 +220,8 @@
             font-weight: 700;
             font-size: 30px
         }
-        .avatar img{
+
+        .avatar img {
             border-radius: 99px;
         }
 
@@ -393,165 +394,226 @@
         .glow-on-hover:hover {
             box-shadow: 0 8px 30px rgba(124, 92, 255, 0.14)
         }
+
         /* ========================== */
-/* RESPONSIVIDADE AVANÇADA   */
-/* ========================== */
+        /* RESPONSIVIDADE AVANÇADA   */
+        /* ========================== */
 
-/* Tablets */
-@media (max-width: 768px) {
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+        /* Tablets */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
 
-    .hero p.lead {
-        max-width: 100%;
-        margin: 0 auto;
-    }
+            .hero p.lead {
+                max-width: 100%;
+                margin: 0 auto;
+            }
 
-    .hero-cta {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+            .hero-cta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
 
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-    .services {
-        grid-template-columns: 1fr 1fr;
-    }
+            .services {
+                grid-template-columns: 1fr 1fr;
+            }
 
-    .contact {
-        grid-template-columns: 1fr;
-    }
+            .contact {
+                grid-template-columns: 1fr;
+            }
 
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
 
-/* MOBILE FIRST – ajustes extras para 480px e abaixo */
-@media (max-width: 480px) {
-    body {
-        padding: 16px;
-    }
-    section{
-        padding: 0px;
-    }
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 8px;
+            }
 
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+            .nav[data-open="true"] {
+                display: flex;
+            }
 
-    .nav {
-        display: none; /* Esconde menu desktop */
-    }
+            .menu-toggle {
+                display: block;
+            }
 
-    /* Botão hambúrguer simples */
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        color: var(--muted);
-        margin-left: auto;
-    }
-    .section-title{
-        display: none;
-    }
-    .preview-card {
-        display: none;
-    }
+            .menu-toggle {
+                display: block;
+                background: transparent;
+                border: 0;
+                cursor: pointer;
+            }
+        }
 
-    h1 {
-        font-size: 24px;
-        line-height: 1.3;
-    }
+        /* MOBILE FIRST – ajustes extras para 480px e abaixo */
+        @media (max-width: 480px) {
+            body {
+                padding: 16px;
+            }
+            h1 {
+                text-align: center;
+            }
 
-    p.lead {
-        max-width: 100%;
-        font-size: 15px;
-        text-align: left;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: left;
-        padding: 50px 0px;
-    }
-
-    .preview-card {
-        height: auto;
-        margin-top: 18px;
-    }
-
-    /* Sobre */
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .avatar {
-        margin-bottom: 12px;
-    }
-
-    /* Projetos e serviços como coluna única */
-    .grid,
-    .services {
-        grid-template-columns: 1fr;
-    }
-
-    .project,
-    .service {
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    /* Contato */
-    .contact {
-        grid-template-columns: 1fr;
-    }
-
-    form button {
-        width: 100%;
-    }
-
-    .socials {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .socials a {
-        justify-content: center;
-    }
-
-    footer {
-        text-align: center;
-        flex-direction: column;
-    }
-}@media (max-width: 480px) {
-    .recent-projects {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin-top: 12px;
-    }
-
-    .recent-projects span {
-        display: inline-block;
-        background: var(--glass);
-        padding: 8px 12px;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 14px;
-        color: #fff;
-        text-align: center;
-    }
-}
+            .hero p.lead{
+                width: 300px;
+                text-align: justify;
+            }
+            div .eyebrow {
+                display: none;
+            }
+            #table{
+                padding: 30px 0px 0px 0px;
+            }
 
 
+            section {
+                padding: 0px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .brand {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                justify-content: space-between;
+            }
+
+            .nav {
+                display: none;
+                /* Esconde menu desktop */
+            }
+
+            /* Botão hambúrguer simples */
+
+
+            .section-title {
+                display: none;
+            }
+
+            .preview-card {
+                display: none;
+            }
+
+            h1 {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            p.lead {
+                max-width: 100%;
+                font-size: 15px;
+                text-align: left;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 50px 0px;
+            }
+
+            .preview-card {
+                height: auto;
+                margin-top: 18px;
+            }
+
+            /* Sobre */
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .avatar {
+                margin-bottom: 12px;
+            }
+
+            /* Projetos e serviços como coluna única */
+            .grid,
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .project,
+            .service {
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            /* Contato */
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            form button {
+                width: 100%;
+            }
+
+            .socials {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .socials a {
+                justify-content: center;
+            }
+
+            footer {
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .recent-projects {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 14px;
+            }
+
+            .recent-projects span {
+                display: inline-block;
+                background: var(--glass);
+                padding: 8px 12px;
+                border-radius: 10px;
+                font-weight: 600;
+                font-size: 14px;
+                color: #fff;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .nav[data-open="true"] {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: transparent;
+                border: 0;
+                cursor: pointer;
+            }
+        }
     </style>
 </head>
 
@@ -559,14 +621,24 @@
     <div class="container">
         <header>
             <div class="brand">
-                <div class="logo">GB</div>
+                <div class="logo" aria-hidden="true">GB</div>
                 <div>
                     <div style="font-weight:800">Gabriel Bonada</div>
                     <div style="font-size:12px;color:var(--muted)">Criador de sites • Front-end</div>
                 </div>
+                <button id="menuToggle" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false"
+                    aria-label="Abrir menu">
+                    <!-- svg hamburger -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        </path>
+                    </svg>
+                </button>
             </div>
 
-            <nav class="nav">
+
+
+            <nav id="primary-nav" class="nav" role="navigation">
                 <a href="#projetos">Projetos</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#contato">Contato</a>
@@ -577,8 +649,8 @@
         <!-- HERO -->
         <main class="hero">
             <div>
-                <div class="eyebrow" data-reveal>Olá — Eu sou o Gabriel</div>
-                <h1 data-reveal>Eu crio sites modernos, rápidos e que convertem.</h1>
+                <div class="eyebrow" data-reveal>Olá, Eu sou o Gabriel</div>
+                <h1 data-reveal>Eu crio sites modernos, rápidos e responsivos.</h1>
                 <p class="lead muted" data-reveal>Desenvolvo projetos em HTML/CSS/JS, React e soluções responsivas para
                     pequenas empresas e freelancers que precisam de presença online profissional.</p>
 
@@ -589,16 +661,16 @@
                     <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
                 </div>
 
-               <div style="margin-top:22px" data-reveal>
-    <div style="font-size:13px;color:var(--muted)">Projetos recentes</div>
-    <div class="recent-projects">
-        <span><a href="https://jade-queijadas-9bdaf0.netlify.app/">Meu Lanche Senai</a> </span>
-        <span> <a href="">AutoMax</a> </span>
-        <span> <a href="https://silksongwiki.netlify.app/">Wiki Silksong</a> </span>
-        <span> <a href="https://tucanstore.netlify.app/">Tucan Store</a> </span>
-        <span> <a href="">Hollow Cards</a> </span>
-    </div>
-</div>
+                <div id="table" style="margin-top:22px" data-reveal>
+                    <div style="font-size:13px;color:var(--muted)">Projetos recentes</div>
+                    <div class="recent-projects">
+                        <span><a href="https://jade-queijadas-9bdaf0.netlify.app/">Meu Lanche Senai</a> </span>
+                        <span> <a href="">AutoMax</a> </span>
+                        <span> <a href="https://silksongwiki.netlify.app/">Wiki Silksong</a> </span>
+                        <span> <a href="https://tucanstore.netlify.app/">Tucan Store</a> </span>
+                        <span> <a href="">Hollow Cards</a> </span>
+                    </div>
+                </div>
 
             </div>
 
@@ -616,12 +688,12 @@
         <section id="sobre" data-reveal>
             <div class="section-title">
                 <h2>Sobre Mim</h2>
-                <div class="muted">— quem sou e o que faço</div>
             </div>
             <div class="about">
                 <div class="avatar"><img src="/111461256.png" alt=""></div>
                 <div>
-                    <p class="muted" style="text-align: justify;">Sou Gabriel, desenvolvedor front-end com experiência em criar interfaces limpas,
+                    <p class="muted" style="text-align: justify;">Sou Gabriel, desenvolvedor front-end com experiência
+                        em criar interfaces limpas,
                         responsivas e com foco em usabilidade. Gosto de juntar design e performance para criar páginas
                         que convertem visitantes em clientes.</p>
                     <div class="skills">
@@ -639,14 +711,18 @@
         <section id="projetos" data-reveal>
             <div class="section-title">
                 <h2>Projetos</h2>
-                <div class="muted">— trabalhos selecionados</div>
             </div>
             <div class="grid">
 
                 <article class="project" data-project-id="meu-lanche">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop&s=placeholder"
-                        alt="Meu Lanche Senai">
-                    <h3>Meu Lanche Senai</h3>
+                    <picture>
+                        <source
+                            srcset="/a/photo-1544025162-d76694265947.avif 1200w, /a/photo-1544025162-d76694265947.avif 800w"
+                            type="image/webp">
+                        <img src="/a/photo-1544025162-d76694265947.avif"
+                            alt="Home do Meu Lanche — cardápio e botão pedido" loading="lazy" width="1200" height="800">
+                    </picture>
+                    <h3>Sites para seu Restaurante</h3>
                     <p class="muted">Site para lancheria com cardápio online, pedido via QR Code e design responsivo.
                     </p>
                     <div class="tags">
@@ -656,10 +732,15 @@
                 </article>
 
                 <article class="project" data-project-id="automax">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop&s=placeholder"
-                        alt="AutoMax">
-                    <h3>AutoMax</h3>
-                    <p class="muted">Plataforma de revenda de veículos com filtros e galeria de anúncios.</p>
+                    <picture>
+                        <source
+                            srcset="/a/photo-1503376780353-7e6692767b70.avif 1200w, /a/photo-1503376780353-7e6692767b70.avif 800w"
+                            type="image/webp">
+                        <img src="/a/photo-1503376780353-7e6692767b70.avif"
+                            alt="Home do Meu Lanche — cardápio e botão pedido" loading="lazy" width="1200" height="800">
+                    </picture>
+                    <h3>Ecommerces e site de vendas</h3>
+                    <p class="muted">Plataforma de vendas com interação de Apis e banco de dados.</p>
                     <div class="tags">
                         <small class="chip">JS</small>
                         <small class="chip">APIs</small>
@@ -667,10 +748,13 @@
                 </article>
 
                 <article class="project" data-project-id="hollow-cards">
-                    <img src="https://images.unsplash.com/photo-1526378722684-9f9d1b4d3a4e?q=80&w=800&auto=format&fit=crop&s=placeholder"
-                        alt="Hollow Cards">
-                    <h3>Hollow Cards</h3>
-                    <p class="muted">Jogo de cartas em HTML/CSS/JS com drag & drop e animações.</p>
+                    <picture>
+                        <source srcset="/a/new-bg (1).webp 1200w, /a/new-bg (1).webp 800w" type="image/webp">
+                        <img src="/a/new-bg (1).webp" alt="Home do Meu Lanche — cardápio e botão pedido" loading="lazy"
+                            width="1200" height="800">
+                    </picture>
+                    <h3>Faço tambem Wikis e sites institucionais</h3>
+                    <p class="muted">Sites para informações de diversas categorias.</p>
                     <div class="tags">
                         <small class="chip">Canvas</small>
                         <small class="chip">Animations</small>
@@ -684,7 +768,6 @@
         <section id="servicos" data-reveal>
             <div class="section-title">
                 <h2>Serviços</h2>
-                <div class="muted">— como eu posso ajudar</div>
             </div>
             <div class="services">
                 <div class="service">
@@ -706,7 +789,6 @@
         <section id="contato" data-reveal>
             <div class="section-title">
                 <h2>Contato</h2>
-                <div class="muted">— vamos conversar</div>
             </div>
             <div class="contact">
                 <form onsubmit="handleForm(event)">
@@ -784,6 +866,33 @@
             if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
         }
         window.addEventListener('keydown', handleFirstTab);
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('primary-nav');
+        menuToggle.addEventListener('click', () => {
+            const opened = nav.getAttribute('data-open') === 'true';
+            nav.setAttribute('data-open', String(!opened));
+            menuToggle.setAttribute('aria-expanded', String(!opened));
+        });
+        // fechar com ESC
+        document.addEventListener('keydown', (ev) => {
+            if (ev.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
+                nav.setAttribute('data-open', 'false');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.focus();
+            }
+        });
+        async function handleForm(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+            const res = await fetch('https://formspree.io/f/your-id', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+            });
+            if (res.ok) alert('Mensagem enviada — obrigado!');
+        }
+
     </script>
 </body>
 
