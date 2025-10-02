@@ -322,6 +322,105 @@
             margin-bottom: 10px
         }
 
+        /* Botão hamburguer */
+        .hamburguer {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0;
+            position: relative;
+        }
+
+        .hamburguer span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            ;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animação X */
+        .hamburguer.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburguer.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburguer.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Navbar padrão (desktop) */
+        .nav {
+            display: flex;
+            gap: 20px;
+
+        }
+
+        /* Menu fullscreen no mobile */
+        @media(max-width: 950px) {
+            .nav {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(17, 17, 17, 0.95);
+                gap: 30px;
+                font-size: 24px;
+
+                /* ESSA PARTE IMPORTA: começa escondida */
+                transform: translateY(-100%);
+                transition: transform 0.4s ease-in-out;
+                z-index: 1000;
+            }
+
+            .nav.active {
+                transform: translateY(0);
+                /* aparece */
+            }
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ff4f4f;
+        }
+
+        .navbar.active {
+            transform: translateY(0);
+        }
+
+        .hamburguer {
+            display: flex;
+            z-index: 1002;
+            /* acima do menu */
+        }
+
+        .dropdown>a:hover {
+            color: #ff4f4f;
+        }
+
         .socials {
             display: flex;
             gap: 10px;
@@ -360,20 +459,6 @@
             }
         }
 
-        @media (max-width:640px) {
-            .grid {
-                grid-template-columns: 1fr
-            }
-
-            h1 {
-                font-size: 28px
-            }
-
-            .hero p.lead {
-                max-width: 100%
-            }
-        }
-
         /* Subtle animations */
         [data-reveal] {
             opacity: 0;
@@ -401,13 +486,74 @@
 
         /* Tablets */
         @media (max-width: 768px) {
+            .recent-projects {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 14px;
+            }
+
+            .recent-projects span {
+                width: 48%;
+                display: inline-block;
+                background: var(--glass);
+                padding: 20px 10px;
+                border-radius: 10px;
+                font-weight: 600;
+                font-size: 14px;
+                color: #fff;
+                text-align: center;
+
+                /* preparação para a animação */
+                background-image: linear-gradient(90deg, var(--accent), var(--accent-2));
+                background-size: 200%;
+                /* deixa o gradiente maior para animar */
+                background-position: left;
+                transition: background-position 0.5s ease, transform 0.3s ease;
+            }
+
+            /* Hover com gradiente deslizando */
+            .recent-projects span:hover {
+                background-position: right;
+                /* desliza o gradiente */
+                transform: scale(1.05);
+                /* dá um leve "zoom" no hover */
+            }
+
+            .recent-projects a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            h1 {
+                width: 70%;
+                margin: auto;
+                font-size: 36px;
+            }
+
+            .hero .eyebrow {
+                display: none;
+            }
+
+            .brand {
+                justify-content: space-between;
+                display: flex;
+                align-items: center;
+            }
+
+            header {
+                display: block;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
             .hero p.lead {
-                max-width: 100%;
+                padding: 20px 0px;
+                max-width: 70%;
                 margin: 0 auto;
             }
 
@@ -443,15 +589,22 @@
                 display: flex;
             }
 
-            .menu-toggle {
-                display: block;
+
+        }
+
+        @media (max-width: 640px) {
+
+            h1 {
+                width: 100%;
             }
 
-            .menu-toggle {
-                display: block;
-                background: transparent;
-                border: 0;
-                cursor: pointer;
+            .hero p.lead {
+                width: 100%;
+                max-width: 80%;
+            }
+
+            p.lead {
+                width: 100%;
             }
         }
 
@@ -460,18 +613,25 @@
             body {
                 padding: 16px;
             }
+
+            .container {
+                padding: 10px;
+            }
+
             h1 {
                 text-align: center;
             }
 
-            .hero p.lead{
+            .hero p.lead {
                 width: 300px;
                 text-align: justify;
             }
+
             div .eyebrow {
                 display: none;
             }
-            #table{
+
+            #table {
                 padding: 30px 0px 0px 0px;
             }
 
@@ -492,14 +652,6 @@
                 gap: 12px;
                 justify-content: space-between;
             }
-
-            .nav {
-                display: none;
-                /* Esconde menu desktop */
-            }
-
-            /* Botão hambúrguer simples */
-
 
             .section-title {
                 display: none;
@@ -522,7 +674,7 @@
 
             .hero {
                 grid-template-columns: 1fr;
-                padding: 50px 0px;
+                padding: 30px 0px;
             }
 
             .preview-card {
@@ -546,11 +698,16 @@
                 grid-template-columns: 1fr;
             }
 
+            .grid {
+                margin-top: 50px;
+            }
+
             .project,
             .service {
                 margin: 0 auto;
                 width: 100%;
             }
+
 
             /* Contato */
             .contact {
@@ -576,44 +733,54 @@
             }
 
             .recent-projects {
+                align-items: center;
                 display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 12px;
                 margin-top: 14px;
             }
 
             .recent-projects span {
+                width: 70%;
                 display: inline-block;
                 background: var(--glass);
-                padding: 8px 12px;
+                padding: 20px 10px;
                 border-radius: 10px;
                 font-weight: 600;
                 font-size: 14px;
                 color: #fff;
                 text-align: center;
+
+                /* preparação para a animação */
+                background-image: linear-gradient(90deg, var(--accent), var(--accent-2));
+                background-size: 200%;
+                /* deixa o gradiente maior para animar */
+                background-position: left;
+                transition: background-position 0.5s ease, transform 0.3s ease;
             }
 
-            .menu-toggle {
-                display: block;
+            /* Hover com gradiente deslizando */
+            .recent-projects span:hover {
+                background-position: right;
+                /* desliza o gradiente */
+                transform: scale(1.05);
+                /* dá um leve "zoom" no hover */
+            }
+
+
+            .recent-projects a {
+                text-decoration: none;
+                color: #fff;
             }
 
             .nav {
-                display: none;
+
                 flex-direction: column;
                 gap: 8px;
             }
-
-            .nav[data-open="true"] {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-                background: transparent;
-                border: 0;
-                cursor: pointer;
-            }
         }
+
+        */
     </style>
 </head>
 
@@ -626,13 +793,10 @@
                     <div style="font-weight:800">Gabriel Bonada</div>
                     <div style="font-size:12px;color:var(--muted)">Criador de sites • Front-end</div>
                 </div>
-                <button id="menuToggle" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false"
-                    aria-label="Abrir menu">
-                    <!-- svg hamburger -->
-                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        </path>
-                    </svg>
+                <button id="hamburguer-btn" class="hamburguer" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
 
@@ -664,7 +828,7 @@
                 <div id="table" style="margin-top:22px" data-reveal>
                     <div style="font-size:13px;color:var(--muted)">Projetos recentes</div>
                     <div class="recent-projects">
-                        <span><a href="https://jade-queijadas-9bdaf0.netlify.app/">Meu Lanche Senai</a> </span>
+                        <span><a href="https://jade-queijadas-9bdaf0.netlify.app/">Meu Lanche Senai</span></a>
                         <span> <a href="">AutoMax</a> </span>
                         <span> <a href="https://silksongwiki.netlify.app/">Wiki Silksong</a> </span>
                         <span> <a href="https://tucanstore.netlify.app/">Tucan Store</a> </span>
@@ -699,7 +863,7 @@
                     <div class="skills">
                         <span class="chip">HTML</span>
                         <span class="chip">CSS</span>
-                        <span class="chip">JavaScript</span>
+                        <span class="chip">JS</span>
                         <span class="chip">React</span>
                         <span class="chip">Bootstrap</span>
                     </div>
@@ -820,13 +984,19 @@
         <footer>
             <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
                 <div>© Gabriel Bonada • Desenvolvedor de Sites</div>
-                <div class="muted">Feito com cuidado — Quer que eu personalize esse template pra você?</div>
             </div>
         </footer>
 
     </div>
 
     <script>
+        const hamburguerBtn = document.getElementById("hamburguer-btn");
+        const navbar = document.querySelector(".nav");
+
+        hamburguerBtn.addEventListener("click", () => {
+            hamburguerBtn.classList.toggle("active");
+            navbar.classList.toggle("active");
+        });
         // Simple reveal on scroll (IntersectionObserver)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -865,14 +1035,7 @@
         function handleFirstTab(e) {
             if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
         }
-        window.addEventListener('keydown', handleFirstTab);
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.getElementById('primary-nav');
-        menuToggle.addEventListener('click', () => {
-            const opened = nav.getAttribute('data-open') === 'true';
-            nav.setAttribute('data-open', String(!opened));
-            menuToggle.setAttribute('aria-expanded', String(!opened));
-        });
+
         // fechar com ESC
         document.addEventListener('keydown', (ev) => {
             if (ev.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
