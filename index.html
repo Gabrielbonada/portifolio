@@ -29,6 +29,8 @@
                     <span></span>
                     <span></span>
                 </button>
+
+
             </div>
 
 
@@ -53,7 +55,7 @@
                     <button class="btn btn-primary"
                         onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Pedir
                         orçamento</button>
-                    <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+                    <button class="btn btn-ghost" onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})" href="#projetos">Ver projetos</button>
                 </div>
 
                 <div id="table" style="margin-top:22px" data-reveal>
@@ -103,7 +105,7 @@
         </section>
 
         <!-- PROJECTS -->
-        <section id="projetos" data-reveal>
+        <section class="PROJECTS" id="projetos" data-reveal>
             <div class="section-title">
                 <h2>Projetos</h2>
             </div>
@@ -211,8 +213,8 @@
                     <div class="card" style="background:var(--card);padding:12px;border-radius:12px">
                         <h4>Contatos rápidos</h4>
                         <div class="socials" style="margin-top:12px">
-                            <a href="#" onclick="openLink('https:wa.me551991648456')">WhatsApp</a>
-                            <a href="#" onclick="openLink('https://www.linkedin.com/in/YOURPROFILE')">LinkedIn</a>
+                            <a href="#" onclick="openLink('https://wa.me/5551991648456')">WhatsApp</a>
+                            <a href="#" onclick="openLink('https://www.linkedin.com/in/gabriel-bonada-vaz-trindade-296433248/')">LinkedIn</a>
                             <a href="#" onclick="openLink('https://github.com/Gabrielbonada')">GitHub</a>
                         </div>
                         <div style="margin-top:12px;color:var(--muted)">Ou envie um email diretamente: <br><a
