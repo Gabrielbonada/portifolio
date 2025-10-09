@@ -1,0 +1,64 @@
+INSTRUÇÕES PARA IMAGENS DO PORTFÓLIO
+=====================================
+
+Para que o portfólio funcione corretamente, você precisa adicionar as seguintes imagens:
+
+1. FOTO DE PERFIL
+   Caminho: /111461256.png
+   Descrição: Sua foto de perfil
+   Formato: PNG
+   Tamanho recomendado: 400x400px (será exibida em círculo)
+
+2. IMAGENS DOS PROJETOS
+   
+   a) Projeto "Meu Lanche Senai"
+      Caminho: /a/photo-1544025162-d76694265947.avif
+      Descrição: Screenshot do site de lancheria
+      Formato: AVIF ou JPG/PNG
+      Tamanho recomendado: 1200x800px
+   
+   b) Projeto "AutoMax"
+      Caminho: /a/photo-1503376780353-7e6692767b70.avif
+      Descrição: Screenshot do e-commerce de veículos
+      Formato: AVIF ou JPG/PNG
+      Tamanho recomendado: 1200x800px
+   
+   c) Projeto "Hollow Cards"
+      Caminho: /a/b.webp
+      Descrição: Screenshot do jogo de cartas
+      Formato: WEBP ou JPG/PNG
+      Tamanho recomendado: 1200x800px
+
+COMO ADICIONAR AS IMAGENS:
+--------------------------
+
+Opção 1: Copiar do portfólio original
+Se você tem as imagens no diretório /home/ubuntu/upload/, execute:
+  cp /home/ubuntu/upload/111461256.png /home/ubuntu/portfolio-melhorado/
+  cp -r /home/ubuntu/upload/a/* /home/ubuntu/portfolio-melhorado/a/
+
+Opção 2: Usar imagens de placeholder
+Você pode usar serviços como:
+  - Unsplash: https://unsplash.com/
+  - Pexels: https://pexels.com/
+  - Placeholder: https://placeholder.com/
+
+Opção 3: Usar suas próprias imagens
+Faça upload das suas imagens nos caminhos especificados acima.
+
+DICAS DE OTIMIZAÇÃO:
+--------------------
+- Use formatos modernos (AVIF, WEBP) para melhor performance
+- Comprima as imagens antes de fazer upload
+- Mantenha o tamanho dos arquivos abaixo de 500KB
+- Use proporção 3:2 para imagens de projetos (ex: 1200x800px)
+
+ALTERNATIVA:
+------------
+Se você não tiver as imagens agora, pode usar URLs externas temporariamente.
+Edite o arquivo index.html e substitua os caminhos das imagens por URLs completas.
+
+Exemplo:
+  De: src="/a/photo-1544025162-d76694265947.avif"
+  Para: src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1200"
+

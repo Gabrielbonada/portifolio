@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gabriel Bonada — Desenvolvedor Front-end</title>
+    <meta name="description" content="Portfólio de Gabriel Bonada — desenvolvedor front-end especializado em sites modernos, responsivos e de alta performance." />
+    <meta name="keywords" content="desenvolvedor front-end, web design, HTML, CSS, JavaScript, React, portfólio" />
+    <meta name="author" content="Gabriel Bonada" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gabriel Bonada — Desenvolvedor Front-end" />
+    <meta property="og:description" content="Criador de sites modernos, rápidos e responsivos" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <div class="container">
+        <header id="main-header">
+            <div class="brand">
+                <div class="logo" aria-label="Gabriel Bonada">GB</div>
+                <div>
+                    <div class="brand-name">Gabriel Bonada</div>
+                    <div class="brand-subtitle">Criador de sites • Front-end</div>
+                </div>
+                <button id="hamburguer-btn" class="hamburguer" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <nav id="primary-nav" class="nav" role="navigation" aria-label="Navegação principal">
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#contato" class="nav-link">Contato</a>
+                <a class="btn btn-ghost" href="#contato">Contratar</a>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+        <main class="hero">
+            <div class="hero-content">
+                <div class="eyebrow" data-reveal>Olá, Eu sou o Gabriel</div>
+                <h1 data-reveal>Eu crio sites modernos, rápidos e responsivos.</h1>
+                <p class="lead muted" data-reveal>Desenvolvo projetos em HTML/CSS/JS, React e soluções responsivas para pequenas empresas e freelancers que precisam de presença online profissional.</p>
+
+                <div class="hero-cta" data-reveal>
+                    <button class="btn btn-primary" onclick="scrollToSection('contato')">
+                        <span>Pedir orçamento</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-ghost" onclick="scrollToSection('projetos')">Ver projetos</button>
+                </div>
+
+                <div class="stats-grid" data-reveal>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projetos Concluídos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfação</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Anos de Experiência</div>
+                    </div>
+                </div>
+
+                <div class="recent-projects-section" data-reveal>
+                    <div class="recent-projects-title">Projetos recentes</div>
+                    <div class="recent-projects">
+                        <a href="https://senaiprojeto11.netlify.app/" target="_blank" rel="noopener" class="project-chip">
+                            <span>Hollow Cards</span>
+                        </a>
+                        <a href="https://jade-queijadas-9bdaf0.netlify.app/" target="_blank" rel="noopener" class="project-chip">
+                            <span>Meu Lanche Senai</span>
+                        </a>
+                        <a href="#" class="project-chip">
+                            <span>AutoMax</span>
+                        </a>
+                        <a href="https://silksongwiki.netlify.app/" target="_blank" rel="noopener" class="project-chip">
+                            <span>Wiki Silksong</span>
+                        </a>
+                        <a href="https://tucanstore.netlify.app/" target="_blank" rel="noopener" class="project-chip">
+                            <span>Tucan Store</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-visual">
+                <div class="preview-card glow-on-hover" data-reveal>
+                    <div class="preview-content">
+                        <div class="code-preview">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="code-title">portfolio.jsx</span>
+                            </div>
+                            <div class="code-body">
+                                <pre><code><span class="code-keyword">const</span> <span class="code-function">Portfolio</span> = () => {
+  <span class="code-keyword">return</span> (
+    &lt;<span class="code-tag">div</span> <span class="code-attr">className</span>=<span class="code-string">"modern"</span>&gt;
+      &lt;<span class="code-tag">h1</span>&gt;Sites Incríveis&lt;/<span class="code-tag">h1</span>&gt;
+      &lt;<span class="code-tag">Design</span> <span class="code-attr">quality</span>=<span class="code-string">"premium"</span> /&gt;
+    &lt;/<span class="code-tag">div</span>&gt;
+  );
+};</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview-glow"></div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- ABOUT -->
+        <section id="sobre" class="section-about" data-reveal>
+            <div class="section-header">
+                <span class="section-badge">Sobre mim</span>
+                <h2 class="section-title">Desenvolvedor apaixonado por criar experiências digitais</h2>
+            </div>
+            <div class="about">
+                <div class="avatar-wrapper">
+                    <div class="avatar">
+                        <img src="/111461256.png" alt="Gabriel Bonada - Desenvolvedor Front-end" loading="lazy" />
+                    </div>
+                    <div class="avatar-status">
+                        <span class="status-dot"></span>
+                        Disponível para projetos
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text">Sou Gabriel, desenvolvedor front-end com experiência em criar interfaces limpas, responsivas e com foco em usabilidade. Gosto de juntar design e performance para criar páginas que convertem visitantes em clientes.</p>
+                    
+                    <p class="about-text">Trabalho com as tecnologias mais modernas do mercado e estou sempre buscando aprender novas ferramentas para entregar os melhores resultados aos meus clientes.</p>
+                    
+                    <div class="skills-section">
+                        <h3 class="skills-title">Tecnologias que domino</h3>
+                        <div class="skills">
+                            <span class="chip">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                HTML5
+                            </span>
+                            <span class="chip">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                CSS3
+                            </span>
+                            <span class="chip">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                JavaScript
+                            </span>
+                            <span class="chip">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                React
+                            </span>
+                            <span class="chip">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                Bootstrap
+                            </span>
+                            <span class="chip">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                Responsive Design
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section-projects" id="projetos" data-reveal>
+            <div class="section-header">
+                <span class="section-badge">Portfolio</span>
+                <h2 class="section-title">Projetos que desenvolvi</h2>
+                <p class="section-subtitle">Confira alguns dos trabalhos que realizei para clientes e projetos pessoais</p>
+            </div>
+            <div class="grid">
+                <article class="project" data-project-id="meu-lanche">
+                    <div class="project-image">
+                        <img src="/a/photo-1544025162-d76694265947.avif" alt="Site para Restaurante - Meu Lanche Senai" loading="lazy" width="1200" height="800" />
+                        <div class="project-overlay">
+                            <span class="project-view">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sites para Restaurantes</h3>
+                        <p class="project-description">Site para lancheria com cardápio online, pedido via QR Code e design responsivo.</p>
+                        <div class="tags">
+                            <small class="chip">HTML</small>
+                            <small class="chip">Bootstrap</small>
+                            <small class="chip">Responsive</small>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project" data-project-id="automax">
+                    <div class="project-image">
+                        <img src="/a/photo-1503376780353-7e6692767b70.avif" alt="Ecommerce AutoMax" loading="lazy" width="1200" height="800" />
+                        <div class="project-overlay">
+                            <span class="project-view">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ecommerces e Sites de Vendas</h3>
+                        <p class="project-description">Plataforma de vendas com interação de APIs e banco de dados.</p>
+                        <div class="tags">
+                            <small class="chip">JavaScript</small>
+                            <small class="chip">APIs</small>
+                            <small class="chip">Database</small>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project" data-project-id="hollow-cards">
+                    <div class="project-image">
+                        <img src="/a/b.webp" alt="Wiki e Sites Institucionais" loading="lazy" width="1200" height="800" />
+                        <div class="project-overlay">
+                            <span class="project-view">Ver detalhes</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Wikis e Sites Institucionais</h3>
+                        <p class="project-description">Sites para informações de diversas categorias com animações e interatividade.</p>
+                        <div class="tags">
+                            <small class="chip">Canvas</small>
+                            <small class="chip">Animations</small>
+                            <small class="chip">Interactive</small>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Modal genérico -->
+            <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <div class="modal-backdrop" aria-hidden="true"></div>
+                <div class="modal-content">
+                    <button class="modal-close" aria-label="Fechar modal">&times;</button>
+                    <div id="modal-body">
+                        <!-- Conteúdo vai ser injetado via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="servicos" class="section-services" data-reveal>
+            <div class="section-header">
+                <span class="section-badge">Serviços</span>
+                <h2 class="section-title">Como posso ajudar seu negócio</h2>
+                <p class="section-subtitle">Ofereço soluções completas para sua presença digital</p>
+            </div>
+            <div class="services">
+                <div class="service">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Sites Institucionais</h3>
+                    <p class="service-description">Landing pages e sites para apresentar sua empresa com design profissional e responsivo.</p>
+                    <ul class="service-features">
+                        <li>Design moderno e profissional</li>
+                        <li>Totalmente responsivo</li>
+                        <li>SEO otimizado</li>
+                    </ul>
+                </div>
+                <div class="service featured">
+                    <div class="service-badge">Mais popular</div>
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Landing Pages</h3>
+                    <p class="service-description">Páginas focadas em conversão para campanhas e captação de leads com alta performance.</p>
+                    <ul class="service-features">
+                        <li>Foco em conversão</li>
+                        <li>Carregamento rápido</li>
+                        <li>Integração com ferramentas</li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Manutenção</h3>
+                    <p class="service-description">Correções, otimização e atualizações para sites já existentes com suporte contínuo.</p>
+                    <ul class="service-features">
+                        <li>Correção de bugs</li>
+                        <li>Otimização de performance</li>
+                        <li>Atualizações regulares</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contato" class="section-contact" data-reveal>
+            <div class="section-header">
+                <span class="section-badge">Contato</span>
+                <h2 class="section-title">Vamos trabalhar juntos?</h2>
+                <p class="section-subtitle">Entre em contato e vamos transformar suas ideias em realidade</p>
+            </div>
+            <div class="contact">
+                <form class="contact-form" onsubmit="handleForm(event)">
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" name="nome" id="nome" placeholder="Seu nome" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="seu@email.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea name="mensagem" id="mensagem" rows="5" placeholder="Descreva seu projeto ou necessidade..." required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <span>Enviar mensagem</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-ghost" onclick="openWhats()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </button>
+                    </div>
+                </form>
+
+                <aside class="contact-info">
+                    <div class="info-card">
+                        <h4 class="info-title">Contatos rápidos</h4>
+                        <div class="socials">
+                            <a href="https://wa.me/5551991648456" target="_blank" rel="noopener" class="social-link" onclick="openLink('https://wa.me/5551991648456')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                WhatsApp
+                            </a>
+                            <a href="https://www.linkedin.com/in/gabriel-bonada-vaz-trindade-296433248/" target="_blank" rel="noopener" class="social-link" onclick="openLink('https://www.linkedin.com/in/gabriel-bonada-vaz-trindade-296433248/')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/Gabrielbonada" target="_blank" rel="noopener" class="social-link" onclick="openLink('https://github.com/Gabrielbonada')">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                        <div class="contact-email">
+                            <p>Ou envie um email diretamente:</p>
+                            <a href="mailto:Biel.vaztrindade@email.com" class="email-link">Biel.vaztrindade@email.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card availability">
+                        <div class="availability-header">
+                            <span class="status-dot pulsing"></span>
+                            <span>Disponível para novos projetos</span>
+                        </div>
+                        <p>Geralmente respondo em até 24 horas</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">GB</div>
+                    <div>
+                        <div class="brand-name">Gabriel Bonada</div>
+                        <div class="brand-subtitle">Desenvolvedor Front-end</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#projetos">Projetos</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gabriel Bonada. Todos os direitos reservados.</p>
+                <button id="scroll-to-top" class="scroll-to-top" aria-label="Voltar ao topo" onclick="scrollToTop()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 15l-6-6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
