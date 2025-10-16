@@ -6,21 +6,21 @@ const projectData = {
     "meu-lanche": {
         title: "Meu Lanche Senai",
         desc: "Site completo para lancheria com cardápio online interativo, sistema de pedidos via QR Code e design totalmente responsivo. O projeto inclui integração com WhatsApp para facilitar o contato direto com os clientes.",
-        img: "/a/photo-1544025162-d76694265947.avif",
+        img: "/assets/imagem_pizza.png",
         link: "https://jade-queijadas-9bdaf0.netlify.app/",
         tech: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Responsive Design"]
     },
-    "automax": {
-        title: "AutoMax",
-        desc: "Plataforma completa de e-commerce para vendas de veículos com integração de APIs externas e banco de dados. Inclui sistema de busca avançada, filtros por categoria, e painel administrativo para gerenciamento de produtos.",
-        img: "/a/photo-1503376780353-7e6692767b70.avif",
+    "tucanstore": {
+        title: "TucanStore",
+        desc: "Plataforma completa de e-commerce para vendas com integração de APIs externas e banco de dados. Inclui sistema de busca avançada, filtros por categoria, e painel administrativo para gerenciamento de produtos.",
+        img: "/assets/tucan.png",
         link: "#",
         tech: ["JavaScript", "APIs REST", "Database", "Node.js", "Express"]
     },
-    "hollow-cards": {
-        title: "Hollow Cards",
-        desc: "Jogo de cartas interativo baseado no universo de Hollow Knight, desenvolvido com HTML Canvas e JavaScript puro. Inclui animações fluidas, sistema de pontuação e mecânicas de jogo envolventes.",
-        img: "/a/b.webp",
+    "sitesenai": {
+        title: "Site Senai",
+        desc: "plataforma para a instituição senai. responsiva e totalmente masterizada para a melhor experiencia do usuario",
+        img: "/assets/imagem_senai.png",
         link: "https://senaiprojeto11.netlify.app/",
         tech: ["HTML Canvas", "JavaScript", "CSS Animations", "Game Logic"]
     }
@@ -49,22 +49,22 @@ document.querySelectorAll('.project').forEach(card => {
         const data = projectData[id];
         if (!data) return;
 
-        const techTags = data.tech.map(tech => 
+        const techTags = data.tech.map(tech =>
             `<span class="chip">${tech}</span>`
         ).join('');
 
         modalBody.innerHTML = `
-            <h2 style="margin-bottom: 20px; font-size: 28px;">${data.title}</h2>
-            <img src="${data.img}" alt="${data.title}" style="width:100%; border-radius:12px; margin:20px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
-            <p class="muted" style="font-size: 16px; line-height: 1.8; margin-bottom: 24px;">${data.desc}</p>
+            <h2 style=" text-align:center; margin-bottom: 20px; font-size: 28px;">${data.title}</h2>
+            <img src="${data.img}" alt="${data.title}" style="margin: 0 auto; width:100%; border-radius:12px;  box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+            <p class="muted" style="text-align:justify; font-size: 17px; line-height: 1.8; margin-bottom: 24px; margin:20px 0;;">${data.desc}</p>
             <div style="margin-bottom: 24px;">
-                <h3 style="font-size: 18px; margin-bottom: 12px;">Tecnologias utilizadas:</h3>
-                <div class="tags" style="gap: 10px;">
+                <h3 style=" text-align:center; font-size: 18px; margin-bottom: 20px;">Tecnologias utilizadas:</h3>
+                <div class="tags" style= "     justify-content: center; gap: 10px;">
                     ${techTags}
                 </div>
             </div>
-            ${data.link !== '#' ? `<a href="${data.link}" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px; display:inline-flex; text-decoration: none;">
-                <span>Ver Projeto</span>
+            ${data.link !== '#' ? `<a href="${data.link}" target="_blank" rel="noopener" class="btn btn-primary" style="display: flex; width: 25%; text-align: center; margin: 0 auto; text-decoration: none; justify-content: center;">
+                <span >Ver Projeto</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
@@ -153,13 +153,13 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
-    
+
     lastScroll = currentScroll;
 });
 
@@ -193,7 +193,7 @@ function scrollToSection(sectionId) {
     if (section) {
         const headerHeight = header.offsetHeight;
         const sectionPosition = section.offsetTop - headerHeight - 20;
-        
+
         window.scrollTo({
             top: sectionPosition,
             behavior: 'smooth'
@@ -231,17 +231,17 @@ window.addEventListener('scroll', () => {
 
 function handleForm(e) {
     e.preventDefault();
-    
+
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const mensagem = document.getElementById('mensagem').value;
-    
+
     // Validação básica
     if (!nome || !email || !mensagem) {
         alert('Por favor, preencha todos os campos.');
         return;
     }
-    
+
     // Criar link mailto
     const subject = encodeURIComponent('Orçamento - ' + nome);
     const body = encodeURIComponent(
@@ -249,9 +249,9 @@ function handleForm(e) {
         `Atenciosamente,\n${nome}\n` +
         `Email: ${email}`
     );
-    
+
     window.location.href = `mailto:Biel.vaztrindade@email.com?subject=${subject}&body=${body}`;
-    
+
     // Feedback visual
     showNotification('Abrindo seu cliente de email...');
 }
@@ -294,9 +294,9 @@ function showNotification(message) {
         animation: slideIn 0.3s ease;
         box-shadow: 0 8px 24px rgba(124, 92, 255, 0.4);
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Remover após 3 segundos
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
@@ -351,7 +351,7 @@ if ('loading' in HTMLImageElement.prototype) {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 }
 
@@ -361,13 +361,13 @@ if ('loading' in HTMLImageElement.prototype) {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio carregado com sucesso! 🚀');
-    
+
     // Inicializar scroll progress
     updateScrollProgress();
-    
+
     // Adicionar classe de carregamento completo
     document.body.classList.add('loaded');
-    
+
     // Revelar elementos visíveis na carga
     setTimeout(() => {
         document.querySelectorAll('[data-reveal]').forEach(el => {
@@ -389,11 +389,11 @@ const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLe
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.key);
     konamiCode = konamiCode.slice(-10);
-    
+
     if (konamiCode.join(',') === konamiSequence.join(',')) {
         showNotification('🎮 Código Konami ativado! Você é um verdadeiro gamer!');
         document.body.style.animation = 'rainbow 2s infinite';
-        
+
         setTimeout(() => {
             document.body.style.animation = '';
         }, 5000);
