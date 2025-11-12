@@ -20,6 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,8 +28,8 @@
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scroll-progress"></div>
 
-    <div class="container">
-        <header id="main-header">
+    <div class="container" >
+        <header id="main-header" data-aos="fade-right"  data-aos-duration="1200">
             <div class="brand">
                 <div class="logo" aria-label="Gabriel Bonada">GB</div>
                 <div>
@@ -53,9 +54,9 @@
 
         <!-- HERO -->
         <main class="hero">
-            <div class="hero-content">
+            <div class="hero-content"  data-aos="fade-right"  data-aos-duration="2000">
                 <div class="eyebrow" data-reveal>Olá, Eu sou o Gabriel</div>
-                <h1 data-reveal>Eu crio sites modernos, rápidos e responsivos.</h1>
+                <h1 data-reveal>Crio sites modernos, rápidos e responsivos.</h1>
                 <p class="lead muted" data-reveal>Desenvolvo projetos em HTML/CSS/JS, React e soluções responsivas para
                     pequenas empresas e freelancers que precisam de presença online profissional.</p>
 
@@ -109,7 +110,7 @@
                 </div>
             </div>
 
-            <aside class="hero-visual">
+            <aside class="hero-visual"  data-aos="fade-left"  data-aos-duration="2000">
                 <div class="preview-card glow-on-hover" data-reveal>
                     <div class="preview-content">
                         <div class="code-preview">
@@ -145,7 +146,7 @@
                 <h2 class="section-title">Desenvolvedor junior pronto para projetos para você</h2>
             </div>
             <div class="about">
-                <div class="avatar-wrapper">
+                <div class="avatar-wrapper" data-aos="flip-up" data-aos-duration="700">
                     <div class="avatar">
                         <img src="/assets/perfil.jpg" alt="Gabriel Bonada - Desenvolvedor Front-end" loading="lazy" />
                     </div>
@@ -164,7 +165,7 @@
 
                     <div class="skills-section">
                         <h3 class="skills-title">Tecnologias que domino</h3>
-                        <div class="skills">
+                        <div class="skills" data-aos="zoom-in-down" data-aos-duration="1000">
                             <span class="chip">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -216,7 +217,7 @@
                 </p>
             </div>
             <div class="grid">
-                <article class="project" data-project-id="meu-lanche">
+                <article class="project" data-project-id="meu-lanche" data-aos="fade-right" data-aos-duration="1500">
                     <div class="project-image">
                         <img src="/assets/imagem_pizza.png" alt="Site para Restaurante - Meu Lanche Senai"
                             loading="lazy" width="1200" height="800" />
@@ -236,7 +237,7 @@
                     </div>
                 </article>
 
-                <article class="project" data-project-id="tucanstore">
+                <article class="project" data-project-id="tucanstore" data-aos="fade-in" data-aos-duration="1500">
                     <div class="project-image">
                         <img src="/assets/tucan.png" alt="Ecommerce AutoMax" loading="lazy" width="1200" height="800" />
                         <div class="project-overlay">
@@ -254,7 +255,7 @@
                     </div>
                 </article>
 
-                <article class="project" data-project-id="sitesenai">
+                <article class="project" data-project-id="sitesenai" data-aos="fade-left" data-aos-duration="1500">
                     <div class="project-image">
                         <img src="/assets/imagem_senai.png" alt="Wiki e Sites Institucionais" loading="lazy"
                             width="1200" height="800" />
@@ -470,6 +471,17 @@
 
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+  
+</script>
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle("dark-theme");
+  }
+</script>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script>
         particlesJS("particles-js", {
